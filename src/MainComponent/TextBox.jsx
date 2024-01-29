@@ -5,7 +5,7 @@ import disabledsendIcon from '../assets/disabledsaveicon.svg'
 import CircleInitials from './CircleInitials.jsx';
 import StoredNotes from './StoredNotes.jsx';
 const getGroupInitials = (groupName) => {
-  const words = groupName.split(' ');
+  const words = groupName.split(' ');  
 
   if (words.length === 1) {
     // For single-word group names, return only the first letter
