@@ -1,0 +1,51 @@
+/* TextBox.module.css */
+.textBoxContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    margin-top: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .header {
+    background-color: #001f8b;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+  }
+  
+  .notesContainer {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .textAreaContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 25vh;
+    position: relative;
+    background-color: #001f8b;
+    margin-top: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .textArea {
+    width: 69vw;
+    height: 20vh;
+    resize: none;
+  }
+  
+  .sendIcon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 45px;
+    right: 15px;
+    cursor: pointer;
+  }
+  

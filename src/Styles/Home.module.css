@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Inter:wght@700&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+*{
+    margin:0;
+    padding: 0;
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 1;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  
+    /* Other styles for your popup */
+  }
+  
+  .darkBackground {
+    background-color: rgba(0, 0, 0, 0.5); /* Add a slightly dark background */
+  }
+.Home{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    
+   
+}
+.NotesList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 400px;
+    height:100vh;
+}
+.pn{
+    
+    margin-top: 5vh;   
+    font-family: Roboto;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 3vh;
+    position: sticky;
+
+}
+button{
+    min-width: 230px;
+    height:5vh;
+    background-color: black;
+    font-family: Roboto;
+    font-size: large;
+    color: #fff;
+    border-radius: 20px;
+    margin-bottom: 3vh;
+}
+.NotesArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1vh;
+    width:80vw;
+    height:100vh;
+    background-color: #DAE5F5;
+    font-family: Roboto;
+   
+    
+    color: black;
+    
+}
+.popup {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vh;
+    height: 25vh;
+    width: fit-content;
+    background-color: #fff;
+    font-family: Roboto;
+    padding-left: 30px; /* Adjust the value according to your needs */
+    border-radius: 5px;
+}
+
+  
+@media screen and (max-width: 500px) {
+    .Home{
+        width:100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+    .NotesList {
+      display: flex;
+      flex-direction: column;
+    }
+    .pn {
+        display:flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 10px; /* Adjust the margin as needed */
+      }
+    button{
+        width: 300px;
+    height:50px;
+    }
+    .NotesArea {
+      display: none; /* hide NotesArea on small screens */
+    }
+    .popup {
+      /* Adjust Popup styles for small screens */
+      width: fit-content; /* Set a maximum width for smaller screens */
+      margin: 0 auto; /* Center the Popup horizontally */
+    }
+    .list{
+      left:"60px"
+    }
+  
+  }
+  

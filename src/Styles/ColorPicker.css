@@ -1,0 +1,17 @@
+
+.color-picker {
+    display: flex;
+    gap: 10px; margin-left: 1vw ;
+  }
+  
+  .color-option {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .color-option.selected {
+    border: 2px solid white; /* Add a border or any other styling to indicate selection */
+  }
+  

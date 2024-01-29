@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Inter:wght@700&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+.ListBody{
+    width: 30vw;
+    height:auto;
+   
+    
+  
+}
+.Listdiv{
+    width: 26vw;
+    height: auto;
+    display: flex;
+    gap: 2vw;
+    flex-direction: row;
+    align-items: center;
+   
+    margin-left: 4vw;
+}
+.circle {
+    display: flex;
+    align-self: self-start;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 7vh;
+    height: 7vh; /* Set both width and height to the same value for a perfect circle */
+    border-radius: 50%;
+    background-color: #0047FF;
+    color: white; /* Set the text color */
+    font-size: 18px; /* Adjust the font size as needed */
+    font-family: Roboto;
+    font-weight: lighter;
+  }
+.NotesName{
+    font-size: larger;
+    font-family: Roboto;
+    font-weight: 300;
+    color: black;
+}
+@media screen and (max-width: 500px) {
+    
+}

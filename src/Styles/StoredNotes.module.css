@@ -1,0 +1,22 @@
+.savednotes{
+    width:65vw;
+    height: auto;
+    border-radius: 5px;
+    background-color: #ffff;
+    padding: 20px;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}
+.dateTimeContainer {
+    font-size: 13px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  .dateTimeSeparator {
+    font-size: 20px;
+    margin:0 5px; /* Reset margin */
+  padding: 0; /* Reset padding */
+  line-height: 0.6;
+  }
