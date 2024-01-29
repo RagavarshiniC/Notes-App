@@ -23,44 +23,25 @@ const getGroupInitials = (groupName) => {
 const TextBox = ({ group, onNoteStore, groupNotes }) => {
   const [noteText, setNoteText] = useState('');
   const [isNoteStored, setIsNoteStored] = useState(false);
-  const [mynotes, setmynotes] = useState([]);
+  
   const handleSendClick = () => {
-    // Handle storing the text or any other action you want
-    // console.log('Text stored:', noteText);
-    // setIsNoteStored(true);
-    // onNoteStore(noteText);
-    // const currentDate = new Date().toLocaleString(); // Fetch current date and time
-    // const newNote = {
-    //   text: noteText,
-    //   dateTime: currentDate,
-    // };
-    const localarr = [];
+ 
     const currentDate = new Date();
 const options = { day: 'numeric', month: 'short', year: 'numeric' };
 const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
-const formattedDate = currentDate.toLocaleDateString('en-GB', options); // Set the locale to 'en-GB'
+const formattedDate = currentDate.toLocaleDateString('en-GB', options); 
 const formattedTime = currentDate.toLocaleTimeString('en-US', timeOptions);
-
 const newNote = {
   text: noteText,
   date: formattedDate,
- time:formattedTime,
-group:group
+ time:formattedTime
 };
-localarr.push[newNote];
-const tempitems = localStorage.getItem("localitems")
-localStorage.setItem("localitems",JSON.stringify([...tempitems,localarr]))
-console.log(newNote)
-setmynotes([...mynotes,newNote]);
-console.log(mynotes);
     setIsNoteStored(true);
     onNoteStore(newNote);
-    localStorage.setItem("allnotes",JSON.stringify(mynotes))
     setNoteText('');
-   
-    //localStorage.setItem('groupNotes', JSON.stringify({ ...groupNotes, [group.name]: [...(groupNotes[group.name] || []), newNote] }));
+
+    localStorage.setItem('groupNotes', JSON.stringify({ ...groupNotes, [group.name]: [...(groupNotes[group.name] || []), newNote] }));
   };
- // console.log(localStorage.getItem(allnotes));
  const sendIcon = noteText ? enabledsendIcon : disabledsendIcon; 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', position: 'relative',  marginTop: 'auto', marginBottom: '1rem'  }}>
@@ -81,11 +62,9 @@ console.log(mynotes);
         <textarea
           value={noteText}
           onChange={(e) => setNoteText(e.target.value)}
-          placeholder="Enter your notes here......."
+          placeholder="Enter your notes here..."
           style={{ width: '69vw', height: '20vh', resize: 'none'}}
-          
         />
-        {console.log(noteText)}
         <img
           src={sendIcon}
           alt="Send Icon"
