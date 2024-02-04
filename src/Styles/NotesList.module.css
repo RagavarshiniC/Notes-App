@@ -1,0 +1,86 @@
+.NotesList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 400px;
+    height:100vh;
+}
+.pn{
+    
+    margin-top: 5vh;   
+    font-family: Roboto;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 3vh;
+    position: sticky;
+
+}
+
+.popup {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vh;
+    height: 26vh;
+    width: 27vw;
+    min-width: 300px;
+    background-color: #fff;
+    font-family: Roboto;
+    padding-left: 30px; /* Adjust the value according to your needs */
+    border-radius: 5px;
+}
+.plus {
+  position: fixed;
+  bottom:50px;
+  left: 350px;
+  /* Adjust the right distance as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8.5vh;
+  height: 8.5vh;
+  border-radius: 50%;
+  background-color: #16008B;
+  cursor: pointer; /* Add cursor style to indicate it's clickable */
+}
+
+.plus img {
+  width: 50%;
+  height: auto;
+}
+
+
+
+@media screen and (max-width: 500px) {
+
+    .NotesList {
+        width:100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+    .pn {
+        display:flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 10px; /* Adjust the margin as needed */
+      }
+    button{
+        width: 300px;
+    height:50px;
+    }
+    .NotesArea {
+      display: none; /* hide NotesArea on small screens */
+    }
+    .popup {
+      /* Adjust Popup styles for small screens */
+      width: fit-content; /* Set a maximum width for smaller screens */
+      margin: 0 auto; /* Center the Popup horizontally */
+    }
+    .list{
+      left:"60px"
+    }
+  
+  }

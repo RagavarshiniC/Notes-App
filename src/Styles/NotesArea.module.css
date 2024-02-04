@@ -1,0 +1,15 @@
+.NotesArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1vh;
+    width:80vw;
+    height:100vh;
+    background-color: #DAE5F5;
+    font-family: Roboto;
+   
+    
+    color: black;
+    
+}
