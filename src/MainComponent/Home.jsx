@@ -11,11 +11,22 @@ export default function Home() {
   });
   const [groups, setGroups] = useState([]);
   const [selectedGroup, setSelectedGroup] = useState(null);
- 
+  const [isListclicked, setisListclicked] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
   useEffect(() => {
-    // Retrieve groups from local storage when the component mounts
     const storedGroups = JSON.parse(localStorage.getItem('groups')) || [];
     setGroups(storedGroups);
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const handleNoteStore = (note) => {
@@ -65,23 +76,54 @@ localStorage.setItem('groups', JSON.stringify([...groups, newGroup]));
   const handleListClick = (index) => {
     setSelectedGroup(groups[index]);
     console.log("set selected grp"+setSelectedGroup(groups[index]));
-  
+    setisListclicked(true);
   };
   
 
   return (
     <div className={styles.Home}>
-      <NotesList handleSubmit={handleSubmit} formData={formData} handleInputChange={handleInputChange} handleColorSelect={handleColorSelect} handleListClick={handleListClick} groups={groups} setGroups={setGroups}/>
-        
-
-       
-      <NotesArea
-        group={selectedGroup}
-        onNoteStore={handleNoteStore}
-        groupNotes={groupNotes[selectedGroup?.name]}
-        
-      />
+      {windowWidth > 600 ? (
+        <NotesList
+          handleSubmit={handleSubmit}
+          formData={formData}
+          handleInputChange={handleInputChange}
+          handleColorSelect={handleColorSelect}
+          handleListClick={handleListClick}
+          groups={groups}
+          setGroups={setGroups}
+        />
+      ) : null}
+      {(!(isListclicked) && windowWidth <= 600)  ? (
+        <div>
+         
+          {  (
+            <NotesList
+              handleSubmit={handleSubmit}
+              formData={formData}
+              handleInputChange={handleInputChange}
+              handleColorSelect={handleColorSelect}
+              handleListClick={handleListClick}
+              groups={groups}
+              setGroups={setGroups}
+            />
+          ) }
+        </div>
+      ) : null}        
+      {windowWidth > 600 ? (
+        <NotesArea
+          group={selectedGroup}
+          onNoteStore={handleNoteStore}
+          groupNotes={groupNotes[selectedGroup?.name]}
+        />
+        ) : null}
+{((isListclicked) && windowWidth <= 600)  ? (
+        <NotesArea
+          group={selectedGroup}
+          onNoteStore={handleNoteStore}
+          groupNotes={groupNotes[selectedGroup?.name]}
+        />
       
+        ) : null} 
     </div>
   )
 }
